@@ -1,0 +1,285 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(244, 252, 249);
+}
+
+/* navbar ------------------------------------ */
+
+nav{
+    background-color: rgb(15, 82, 59);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: rgb(75, 156, 129);
+}
+
+nav ul{
+    padding: 0;
+    margin: 10px;
+}
+
+nav ul:first-child{
+    padding-left: 30px;
+}
+
+nav ul:nth-child(2){
+    padding-right: 30px;
+}
+
+nav li{
+    display: inline;
+    list-style-type: none;
+}
+
+nav ul:first-child li:first-child{
+    color: white;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+nav ul:nth-child(2) li{
+    color: white;
+}
+
+nav ul:nth-child(2) li:nth-child(2), nav ul:nth-child(2) li:nth-child(3){
+    margin-left: 20px;
+}
+
+/* form ------------------------------------ */
+
+div.container{
+    width: 40%;
+    margin: 50px auto;
+}
+
+.form-field{
+    background-color: rgb(221, 247, 221);
+    border: 1px solid #1A936F;
+    border-radius: 4px;
+}
+
+legend{
+    color: white;
+    background-color: #1A936F;
+    border-radius: 4px;
+    padding: 5px 20% 5px 10px;
+}
+
+div.form-row{
+    margin: 20px 0;
+}
+
+div.form-row *{
+    margin: 5px 0;
+}
+
+.form-label{
+    display: block;
+    color: #1A936F;
+}
+
+.valid-input, .invalid-input, .form-row textarea{
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border: 1px solid #B3EFB2;
+    border-radius: 4px;
+    color: rgb(114, 114, 114);
+}
+
+.error{
+    color: rgb(209, 72, 72);
+    font-size: 0.8em;
+}
+
+.submit-btn, .login, .form-row button{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    padding: 8px 25px;
+    background-color: #1A936F;
+    border: 1px solid #B3EFB2;
+    border-radius: 4px;
+    margin: 10px 0 10px 5px;
+}
+
+.submit-btn:hover, .login:hover, .form-row button:hover{
+    background-color: rgb(15, 82, 59);
+}
+
+div.quest{
+    font-size: 1.1em;
+}
+
+.login{
+    text-decoration: none;
+    padding: 3px 10px;
+    font-size: 0.8em;
+}
+
+hr{
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(109, 223, 105, 0.75), rgba(0, 0, 0, 0))
+}
+
+div.success{
+    padding: 10px 20px;
+    color: rgb(0, 102, 26);
+    background-color: rgb(173, 247, 165);
+}
+
+div.danger{
+    padding: 10px 20px;
+    color: rgb(190, 60, 60);
+    background-color: rgb(252, 177, 177);
+}
+
+@media (max-width: 900px){
+    div.container{
+        width: 70%;
+    }
+}
+
+/* searchbar ------------------------------------ */
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #1A936F;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: rgb(114, 114, 114);
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #1A936F;
+  background: #1A936F;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* books.html ------------------------------------ */
+.booksTable{
+    width: 70%;
+    margin: 30px auto;
+    border-collapse: collapse;
+}
+
+th, td{
+    text-align: center;
+}
+
+th{
+    font-size: 1.2em;
+}
+
+tr{
+    height: 40px;
+}
+
+tr:nth-child(odd){
+    background-color: rgb(221, 247, 221);
+}
+
+.booksTable tr:first-child{
+    background-color: #1A936F;
+    color: white;
+    height: 50px;
+}
+
+/* book.html ------------------------------------ */
+div.book-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+div.book-detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.book{
+    margin: 10px;
+    text-align: center;
+    display: inline;
+}
+
+h1.book{
+    padding: 10px;
+    background-color: #1A936F;
+    color: white;
+}
+
+.form-row textarea{
+    resize: none;
+}
+
+div.book-container{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(221, 247, 221);
+    padding: 10px;
+    margin: 30px;
+    border-radius: 8px;
+}
+
+h5.msg{
+    text-align: center;
+    margin: 0;
+    padding: 5px 20px;
+    background-color: #f7fcbd;
+    color: rgb(15, 82, 59);
+}
+
+div.rev-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    margin: 30px;
+}
+
+div.rev-items{
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    background-color: rgb(221, 247, 221);
+    padding: 0 20px;
+}
+

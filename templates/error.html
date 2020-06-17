@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Error
+{% endblock title %}
+
+{% block log %}
+    <li><a href="{{ url_for('search') }}">Search</a></li>
+    <li><a href="{{ url_for('register') }}">Register</a></li>
+    <li><a href="{{ url_for('login') }}">Login</a></li>
+{% endblock log %}
+
+{% block content %}
+    <h5 class="msg">{{ message }}</h5>
+{% endblock content %}

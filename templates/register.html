@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock title %}
+
+{% block log %}
+    <li><a href="{{ url_for('register') }}">Register</a></li>
+    <li><a href="{{ url_for('login') }}">Login</a></li>
+{% endblock log %}
+            
+
+{% block content %}
+    <div class="container">
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-field">
+                <legend>Register</legend>
+                <div class="form-row">
+                    {{ form.username.label(class="form-label") }}
+                    {% if form.username.errors %}
+                        {{ form.username(class="invalid-input") }}
+                        <div>
+                            {% for error in form.username.errors %}
+                                <div class="error">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.username(class="valid-input") }}
+                    {% endif %}
+                </div>
+                <div class="form-row">
+                    {{ form.password.label(class="form-label") }}
+                    {% if form.password.errors %}
+                        {{ form.password(class="invalid-input") }}
+                        <div>
+                            {% for error in form.password.errors %}
+                                <div class="error">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(class="valid-input") }}
+                    {% endif %}
+                </div>
+                <div class="form-row">
+                    {{ form.confirm_password.label(class="form-label") }}
+                    {% if form.confirm_password.errors %}
+                        {{ form.confirm_password(class="invalid-input") }}
+                        <div>
+                            {% for error in form.confirm_password.errors %}
+                                <div class="error">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.confirm_password(class="valid-input") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div>
+                {{ form.submit(class="submit-btn") }}
+            </div>
+        </form>
+        <hr>
+        <div class="quest">
+            <small>Already Have An Account? <a class="login" href="{{ url_for('login') }}">Login</a></small>
+        </div>
+    </div>
+
+    
+{% endblock content %} 

@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Book
+{% endblock title %}
+
+{% block log %}
+    <li><a href="{{ url_for('search') }}">Search</a></li>
+    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+{% endblock log %}
+
+{% block content %}
+    {% if message %}
+        <h5 class="msg">{{ message }}</h5>
+    {% endif %}
+    
+    <div class="book-container">
+        <div class="book-detail">
+            <h1 class="book">Title: {{ book.title }}</h1>
+            <h3 class="book">ISBN: {{ book.isbn }}</h3>
+            <h3 class="book">Author: {{ book.author }}</h3>
+            <h3 class="book">Year: {{ book.year }}</h3>
+            <h3 class="book">Number of ratings*: {{ numOfRatings }}</h3>
+            <h3 class="book">Average ratings*: {{ avgRating }}</h3>
+            <p>*Ratings information obtained from the <a href="https://www.goodreads.com/api">Goodreads API.</a></p>
+        </div>
+
+        <div>
+            <form action="{{ url_for('book', isbn=book.isbn) }}" method="POST">
+                <div class="form-row">
+                    <span>Rating: </span>
+                    <select id="rating" name="rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                </div>
+                 
+                <div class="form-row">
+                    <textarea name="review" id="review" cols="50" rows="10" placeholder="Write review here"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <button>Add review</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    {% if reviews %}
+        <h2 style="margin: 0 30px; color: rgb(15, 82, 59);">Reviews</h2>
+        <hr>
+        <div class="rev-container">
+            {% for review in reviews %}
+            <div class="rev-items">
+                <p style="font-size: 1.1em;"><span style="color: #1A936F;">{{ review.username }}</span> rated this {{ review.rating }} out of 5</p>
+                <p>{{ review.review }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    
+{% endblock content %}
