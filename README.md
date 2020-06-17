@@ -2,6 +2,17 @@
 
 > "This is a book review website. Users can register and then log in using their username and password. Once they log in, they will be able to search for books, leave reviews for individual books, and see the reviews made by other people. This website also uses a third-party API by Goodreads, a book review website, to pull in ratings from a broader audience. Finally, users can query for book details and book reviews programmatically via website’s API."
 
+__[Project Demonstration - Youtube Video](https://youtu.be/ysvqGtt4oaE)__
+
+
+### Technologies Used:
+* Flask
+* HTML
+* CSS
+* PostgreSQL
+* API
+
+
 ### Description of the files:
 
 * __forms.py__
